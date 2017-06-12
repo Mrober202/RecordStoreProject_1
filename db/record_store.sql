@@ -13,6 +13,8 @@ title VARCHAR(255),
 genre VARCHAR(255),
 stock_level VARCHAR(255),
 release_year INT2,
-cover VARCHAR(255)
+cover VARCHAR(255),
+buy_price INT2,
+sell_price INT2
 );
 

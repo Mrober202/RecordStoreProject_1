@@ -8,6 +8,7 @@
     <th>Release Year</th>
     <th>Stock Level</th>
     <th>Cover</th>
+    <th>Mark-up</th>
   </tr>
   <% for album in @albums %>
   <tr>
@@ -17,6 +18,7 @@
     <td><%= album.release_year %></td>
     <td><%= album.stock_level %></td>
     <td><img class="cover" src="<%= album.cover() %>" />  </td>
+    <td><%= album.mark_up %></td>
   </tr>
   <% end %>
   <p><a href="album/new">Add Album to Inventory</a></p>
