@@ -3,6 +3,11 @@ require('sinatra/contrib/all')
 require_relative('../models/artist')
 
 get '/artist' do
-  @artist = Artist.all()
-  erb (:"artist/index")
+  @artists = Artist.all()
+  erb (:"artists/index")
 end
+
+get '/artist/new' do
+  erb(:"album/new")
+end
+

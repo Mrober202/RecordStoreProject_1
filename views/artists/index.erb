@@ -1,1 +1,13 @@
 <h1>Artists</h1>
+
+<table>
+  <tr>
+    <th> Name </th>
+  </tr>
+  <% for artist in @artists %>
+  <tr>
+    <td> <%= artist.name %></td>
+  </tr>
+  <% end %>
+  <p><a href="artist/new">Add Artist to Database</a></p>
+</table>

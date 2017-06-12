@@ -2,12 +2,24 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/album')
 
+
 get '/album' do
-  @album = Album.all()
-  erb (:"album/index")
+  @albums = Album.all()
+  erb (:"albums/index")
 end
 
 get '/album/new' do
   @artists = Artist.all()
-  erb(:"album/new")
+  erb(:"albums/new")
+end
+
+get '/album/:id' do
+  @album = Album.find(params[:id])
+  erb(:"albums/show")
+  end
+
+post '/album' do
+  @album = Album.new(params)
+  @album.save()
+  erb(:"albums/create")
 end

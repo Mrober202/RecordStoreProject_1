@@ -12,10 +12,12 @@
   <% for album in @albums %>
   <tr>
     <td><%= album.title %></td>
-    <td><%= album.artist_id %></td>
+    <td><%= album.artist.name %></td>
     <td><%= album.genre %></td>
     <td><%= album.release_year %></td>
     <td><%= album.stock_level %></td>
-    <td><%= alvum.cover %></td>
+    <td><img class="cover" src="<%= album.cover() %>" />  </td>
   </tr>
+  <% end %>
+  <p><a href="album/new">Add Album to Inventory</a></p>
 </table>

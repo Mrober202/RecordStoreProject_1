@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('./artist')
 
 class Album
 
@@ -10,12 +11,12 @@ class Album
     @title = options['title']
     @genre = options['genre']
     @release_year = options['release_year'].to_i()
-    @stock_level = options['stock_level']
+    @stock_level = options['stock_level'].to_i()
     @cover = options['cover']
   end
 
   def save()
-    sql = "INSERT INTO albums (artist_id, title, genre, release_year, stock_level, cover) VALUES (#{@artist_id}, '#{@title}', '#{@genre}', #{@release_year}, '#{@stock_level}', '#{@cover}') RETURNING * ;"
+    sql = "INSERT INTO albums (artist_id, title, genre, release_year, stock_level, cover) VALUES (#{@artist_id}, '#{@title}', '#{@genre}', #{@release_year}, #{@stock_level}, '#{@cover}') RETURNING * ;"
     result = SqlRunner.run(sql)
     @id = result.first['id'].to_i() 
   end
@@ -38,12 +39,23 @@ class Album
   end
 
   def artist()
-    sql = "SELECT * FROM artist WHERE id = #{@artist_id};"
+    sql = "SELECT * FROM artists WHERE id = #{@artist_id};"
     result = SqlRunner.run(sql)
     artist = result.first()
     artist_data = Artist.new(artist)
     return artist_data
   end
+
+  def stock_level()
+    case @stock_level
+    when (0..5)
+      return "Stock Low"
+    when (6..10)
+      return "Stock Adequate"
+    else
+      return "Stock All Good Mate"
+  end
+end
 
 
 end
