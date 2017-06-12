@@ -15,7 +15,7 @@ class Album
   end
 
   def save()
-    sql = "INSERT INTO albums (artist_id, title, genre, release_year, stock_level, cover) VALUES (#{@artist_id}, '#{@title}', '#{@genre}', #{@release_year}, '#{@stock_level}', #{@cover}) RETURNING * ;"
+    sql = "INSERT INTO albums (artist_id, title, genre, release_year, stock_level, cover) VALUES (#{@artist_id}, '#{@title}', '#{@genre}', #{@release_year}, '#{@stock_level}', '#{@cover}') RETURNING * ;"
     result = SqlRunner.run(sql)
     @id = result.first['id'].to_i() 
   end
@@ -33,7 +33,7 @@ class Album
   end  
 
   def self.delete_all()
-    sql "DELETE FROM albums"
+    sql = "DELETE FROM albums ;"
     SqlRunner.run(sql)
   end
 

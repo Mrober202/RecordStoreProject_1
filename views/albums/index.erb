@@ -1,0 +1,21 @@
+<h1>Albums</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>Genre</th>
+    <th>Release Year</th>
+    <th>Stock Level</th>
+    <th>Cover</th>
+  </tr>
+  <% for album in @albums %>
+  <tr>
+    <td><%= album.title %></td>
+    <td><%= album.artist_id %></td>
+    <td><%= album.genre %></td>
+    <td><%= album.release_year %></td>
+    <td><%= album.stock_level %></td>
+    <td><%= alvum.cover %></td>
+  </tr>
+</table>
