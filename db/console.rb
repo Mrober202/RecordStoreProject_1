@@ -140,7 +140,7 @@ album10 = Album.new({
 
 album11 = Album.new({
   'artist_id' => artist4.id,
-  'title' => 'The clash',
+  'title' => 'The Clash',
   'genre' => 'Punk',
   'release_year' => 1977,
   'stock_level' => 4,

@@ -1,0 +1,10 @@
+.cover {
+  height: 100px;
+  width: 100px;
+  padding: 1px;
+  border: 1px solid black;
+}
+
+h1 {
+  position: center;
+}
