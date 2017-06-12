@@ -2,18 +2,20 @@ require_relative('../db/sql_runner')
 
 class Album
 
-  attr_reader(:id, :title, :genre, :release_year, :stock_level)
+  attr_reader(:id, :artist_id, :title, :genre, :release_year, :stock_level, :cover)
 
   def initialize(options)
     @id = options['id'].to_i()
+    @artist_id = options['artist_id']
     @title = options['title']
     @genre = options['genre']
     @release_year = options['release_year'].to_i()
     @stock_level = options['stock_level']
+    @cover = options['cover']
   end
 
   def save()
-    sql = "INSERT INTO albums (title, genre, release_year, stock_level) VALUES ('#{@title}', '#{@genre}', #{@release_year}, '#{@stock_level}') RETURNING * ;"
+    sql = "INSERT INTO albums (artist_id, title, genre, release_year, stock_level, cover) VALUES (#{@artist_id}, '#{@title}', '#{@genre}', #{@release_year}, '#{@stock_level}', #{@cover}) RETURNING * ;"
     result = SqlRunner.run(sql)
     @id = result.first['id'].to_i() 
   end
