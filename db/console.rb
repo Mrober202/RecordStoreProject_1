@@ -147,3 +147,6 @@ album9.save()
 album10.save()
 album11.save()
 album12.save()
+
+binding.pry()
+nil
