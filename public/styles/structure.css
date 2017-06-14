@@ -5,6 +5,66 @@
   border: 1px solid black;
 }
 
+body {
+  background-image: url('/images/record_store.jpg');
+  background-size: cover;
+  margin: 0;
+}
+
 h1 {
-  position: center;
+  text-align: center;
+  font-family: 'Quattrocento', serif;
+  background-color: #316571;
+  font-size: 100px;
+  color: #CBAC12;
+}
+
+p {
+  text-align: center;
+  font-family: 'Quattrocento', serif;
+  font-size: 40px;
+ 
+}
+
+a {
+  background-color: #CBAC12;
+  color: #316571;
+}
+
+a:hover {
+  color: red;
+}
+
+#menu {
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Quattrocento', serif;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 2px 3px #AE3636;
+    background-color: #316571;
+        border-radius: 8px;
+}
+
+#menu ul {
+    padding: 0;
+    margin: 0px;
+}
+
+#menu li { 
+display: inline-block; 
+margin: 0 50px;
+}
+
+#menu a {
+  display: inline-block;
+    text-decoration: none;
+    color: #316571;
+    padding: 30px 30px 30px 30px;
+    font-size: 2em;
+}
+
+#menu a:hover {
+    color: #F90;
+    background-color: #FFF;
 }

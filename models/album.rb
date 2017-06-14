@@ -52,11 +52,11 @@ class Album
   def stock_level()
     case @stock_level
     when (0..5)
-      return "Stock Low"
+      return "Low"
     when (6..10)
-      return "Stock Adequate"
+      return "Adequate"
     else
-      return "Stock All Good Mate"
+      return "High"
     end
   end
 
